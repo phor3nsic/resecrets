@@ -33,7 +33,7 @@ def search_in_files(directory, regex_pattern):
                     if match:
                         matches.append((file_path, match))
             except Exception as e:
-                print(f"[!] Could not read file {file_path}: {e}")
+                print(f"[!] Could not read file {file_path}")
 
     return matches
 
