@@ -30,10 +30,10 @@ def search_in_files(directory, regex_pattern):
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()
-                    match = regex.findall(content)
-                    if match:
-                        matches.append((file_path, match))
-            except UnicodeDecodeError:  # Capture apenas exceções relacionadas a I/O
+                    for match in regex.finditer(content):
+                        full_match = match.group()
+                        matches.append((file_path, full_match))
+            except UnicodeDecodeError:
                 pass
             except Exception as e:
                 print(f"[!] An unexpected error occurred: {e}")
@@ -44,7 +44,7 @@ def search_in_files(directory, regex_pattern):
 def matche_filter(name, filter, directory):
     matches = search_in_files(directory, filter)
     for file_path, match in matches:
-        print(f"[+] {RED}{name.replace('_',' ')}{NC} in {GREEN}{file_path}{NC}")
+        print(f"[+] {RED}{name.replace('_', ' ')}{NC}: {GREEN}{match}{NC} in {file_path}")
 
 def search(pathern, directory):
     with open(pathern) as f:
