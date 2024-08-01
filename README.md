@@ -7,10 +7,10 @@ Resecrets is a powerful tool designed for security researchers and developers to
 
 ### Features
 
-•	Customizable regex patterns for targeted searches
-•	Recursive scanning of directories
-•	Easy integration into CI/CD pipelines
-•	Supports multiple file types
+- Customizable regex patterns for targeted searches
+- Recursive scanning of directories
+- Easy integration into CI/CD pipelines
+- Supports multiple file types
 
 ### Usage
 
