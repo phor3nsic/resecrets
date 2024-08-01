@@ -6,6 +6,7 @@ import argparse
 
 from pathlib import Path
 
+MAIN_DIR = os.path.dirname(os.path.realpath(__file__))
 RED='\033[0;31m'
 WHITE='\033[0;37m'
 GREEN='\033[0;32m'
@@ -42,6 +43,15 @@ def matche_filter(name, filter, directory):
     for file_path, match in matches:
         print(f"[+] {RED}{name.replace('_',' ')}{NC} in {GREEN}{file_path}{NC}")
 
+def search(pathern, directory):
+    with open(pathern) as f:
+        regex_data = json.load(f)
+        for name, filter in regex_data.items():
+            if isinstance(filter, list):
+                for f in filter:
+                    matche_filter(name, f, directory)
+            else:
+                matche_filter(name, filter, directory)
 
 def main():
 
@@ -55,17 +65,9 @@ def main():
         print(BANNER)
 
     directory = args.directory
-    main_dir = os.path.dirname(os.path.realpath(__file__))
-    pathern = os.path.join(str(Path(main_dir).parent), "config", "regexes.json") if args.regex is None else args.regex
+    pathern = os.path.join(str(Path(MAIN_DIR).parent), "config", "regexes.json") if args.regex is None else args.regex
 
-    with open(pathern) as f:
-        regex_data = json.load(f)
-        for name, filter in regex_data.items():
-            if isinstance(filter, list):
-                for f in filter:
-                    matche_filter(name, f, directory)
-            else:
-                matche_filter(name, filter, directory)
+    search(pathern, directory)
 
 if __name__ == "__main__":
     main()
