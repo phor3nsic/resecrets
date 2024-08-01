@@ -11,6 +11,7 @@ RED='\033[0;31m'
 WHITE='\033[0;37m'
 GREEN='\033[0;32m'
 NC='\033[0m'
+SILENT = False
 
 BANNER = f"""{WHITE}
 
@@ -44,7 +45,10 @@ def search_in_files(directory, regex_pattern):
 def matche_filter(name, filter, directory):
     matches = search_in_files(directory, filter)
     for file_path, match in matches:
-        print(f"[+] {RED}{name.replace('_', ' ')}{NC}: {GREEN}{match}{NC} in {file_path}")
+        if SILENT == False:
+            print(f"[+] {RED}{name.replace('_', ' ')}{NC}: {GREEN}{match}{NC} in {file_path}")
+        else: 
+            print(f"[+] {name.replace('_', ' ')}: {match} in {file_path}")
 
 def search(pathern, directory):
     with open(pathern) as f:
@@ -57,6 +61,7 @@ def search(pathern, directory):
                 matche_filter(name, filter, directory)
 
 def main():
+    global SILENT
 
     parser = argparse.ArgumentParser(add_help=True)
     parser.add_argument("directory", help="Directory to search secrets")
@@ -64,7 +69,9 @@ def main():
     parser.add_argument("-silent", action="store_true", help="Not show banner")
     args = parser.parse_args()
 
-    if not args.silent:
+    SILENT = args.silent
+    
+    if SILENT == False:
         print(BANNER)
 
     directory = args.directory
