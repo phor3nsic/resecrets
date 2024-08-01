@@ -20,6 +20,15 @@ To use Resecrets, simply specify the directory. The tool will output any matches
 resecrets /path/to/scan
 ```
 
+#### Plus
+
+Try using it with [DownJS](https://github.com/deeplooklabs/downjs)
+You can download JS files and use [resecrets](https://github.com/phor3nsic/resecrets)
+
+```sh
+cat JS_URLS.txt| downjs && resecrets downjs_output
+```
+
 ### Install
 
 - via pipx:
