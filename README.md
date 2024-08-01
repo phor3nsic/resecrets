@@ -42,6 +42,32 @@ pipx install git+https://github.com/phor3nsic/resecrets
 pip install git+https://github.com/phor3nsic/resecrets
 ```
 
+### Contribute More Regular Expressions!
+
+We welcome contributions to our collection of regular expressions! If you have useful regex patterns to share, please follow these steps:
+
+1. **Open an Issue**: To contribute, simply open an issue on our repository.
+2. **Provide Your Regex**: Include your regex in the issue, using the following format:
+
+   - **Single Regex**:
+     ```json
+     "RESOURCE NAME": "REGEX"
+     ```
+
+   - **Multiple Regexes**:
+     ```json
+     "RESOURCE NAME": [
+         "REGEX1",
+         "REGEX2"
+     ]
+     ```
+
+3. **Describe Your Contribution**: Briefly explain what your regex does and why it’s useful.
+
+We’ll review your submission and incorporate it into our project.
+
+Thank you for helping us improve!
+
 ### License
 
 This project is licensed under the MIT License.

@@ -45,7 +45,7 @@
 	"Artifactory_API_Token": "(?:\\s|=|:|\"|^)AKC[a-zA-Z0-9]{10,}",
 	"Artifactory_Password": "(?:\\s|=|:|\"|^)AP[\\dABCDEF][a-zA-Z0-9]{8,}",
 	"Authorization_Basic": "(B|b)asic\\s[a-zA-Z0-9_\\-:\\.=]+",
-	"Authorization_Bearer": "bearer\\s[a-zA-Z0-9_\\-:\\.=]+",
+	"Authorization_Bearer": "(B|b)earer\\s[a-zA-Z0-9_\\-:\\.=]+",
 	"AWS_API_Key": "AKIA[0-9A-Z]{16}",
 	"Basic_Auth_Credentials": "(?<=:\/\/)[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z]+",
 	"Cloudinary_Basic_Auth": "cloudinary:\/\/[0-9]{15}:[0-9A-Za-z]+@[a-z]+",
