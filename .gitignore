@@ -1,0 +1,6 @@
+*venv*
+venv/*
+build/*
+*build*
+*resecrets.egg-info*
+resecrets.egg-info/*
