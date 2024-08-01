@@ -33,8 +33,11 @@ def search_in_files(directory, regex_pattern):
                     match = regex.findall(content)
                     if match:
                         matches.append((file_path, match))
+            except UnicodeDecodeError:  # Capture apenas exceções relacionadas a I/O
+                pass
             except Exception as e:
-                print(f"[!] Could not read file {file_path}")
+                print(f"[!] An unexpected error occurred: {e}")
+                raise
 
     return matches
 
