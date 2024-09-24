@@ -1,5 +1,18 @@
 # 
-![alt text](images/image.png)
+
+```sh
+
+
+┬─┐┌─┐┌─┐┌─┐┌─┐┬─┐┌─┐┌┬┐┌┼┐
+├┬┘├┤ └─┐├┤ │  ├┬┘├┤  │ └┼┐
+┴└─└─┘└─┘└─┘└─┘┴└─└─┘ ┴ └┼┘
+      by @ph0r3nsic
+
+
+[+] Json Web Tokens: eyJhbGciOiJ in ./configs/credentials.json
+[+] Base64 api key: YXBpX2tleQ in ./configs/credentials.json
+[+] Cert or SSH keys: -----BEGIN PRIVATE KEY----- in ./configs/credentials.json
+```
 
 ###
 
