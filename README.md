@@ -42,6 +42,17 @@ pipx install git+https://github.com/phor3nsic/resecrets
 pip install git+https://github.com/phor3nsic/resecrets
 ```
 
+### In Source:
+
+```python
+from resecrets import main as rsecrets
+
+main_dir = rsecrets.MAIN_DIR
+pathern = os.path.join(str(Path(main_dir).parent), "config", "regexes.json")
+rsecrets.search(pathern, "/PATH_TO_SEARCH/")
+
+```
+
 ### Contribute More Regular Expressions!
 
 We welcome contributions to our collection of regular expressions! If you have useful regex patterns to share, please follow these steps:
