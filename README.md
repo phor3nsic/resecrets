@@ -33,6 +33,12 @@ To use Resecrets, simply specify the directory. The tool will output any matches
 resecrets /path/to/scan
 ```
 
+#### JSON Output
+
+```sh
+resecrets --json /path/to/scan
+```
+
 #### Plus
 
 Try using it with [DownJS](https://github.com/deeplooklabs/downjs)
@@ -58,11 +64,13 @@ pip install git+https://github.com/phor3nsic/resecrets
 ### In Source:
 
 ```python
-from resecrets import main as rsecrets
+from resecrets import MAIN_DIR, search
 
-main_dir = rsecrets.MAIN_DIR
-pathern = os.path.join(str(Path(main_dir).parent), "config", "regexes.json")
-rsecrets.search(pathern, "/PATH_TO_SEARCH/")
+pattern_path = os.path.join(str(Path(MAIN_DIR).parent), "config", "regexes.json")
+results = search(pattern_path, "/PATH_TO_SEARCH/")
+
+# results example:
+# [{"name": "json_web_tokens", "match": "eyJhbGciOiJ", "file": "./configs/credentials.json"}]
 
 ```
 

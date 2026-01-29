@@ -21,6 +21,8 @@ setup(
     description='Description of resecrets.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
+    license='MIT',
+    license_files=['LICENSE'],
     url='https://github.com/phor3nsic/resecrets',
     classifiers=[
         'Development Status :: 3 - Alpha',
