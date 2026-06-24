@@ -33,6 +33,14 @@ To use Resecrets, simply specify the directory. The tool will output any matches
 resecrets /path/to/scan
 ```
 
+| Flag | Description | Default |
+|------|-------------|---------|
+| `directory` | Directory to search for secrets (required) | — |
+| `-r`, `--regex` | JSON file with custom regex patterns | built-in patterns |
+| `--json` | Output results as JSON | off |
+| `--no-color` | Disable ANSI colors | off |
+| `-silent` | Hide the banner | off |
+
 #### JSON Output
 
 ```sh
